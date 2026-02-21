@@ -9,6 +9,7 @@
  */
 
 import type * as saturday from "../saturday.js";
+import type * as sunday from "../sunday.js";
 
 import type {
   ApiFromModules,
@@ -18,6 +19,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   saturday: typeof saturday;
+  sunday: typeof sunday;
 }>;
 
 /**
