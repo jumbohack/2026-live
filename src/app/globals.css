@@ -1,10 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,15 +7,68 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  --font-ltc: "ltc-broadway-engraved", sans-serif;
+  --font-broadacre: "broadacre-regular-0", sans-serif;
+
+  --color-jh-red-100: #b53324;
+  --color-jh-red-200: #802116;
+  --color-jh-red-300: #4a0e07;
+  --color-jh-blue-100: #0fa3b1;
+  --color-jh-blue-200: #004e89;
+  --color-jh-blue-300: #092536;
+  --color-jh-text-blue: #88cdd7;
+  --color-jh-cream: #ffecd9;
+  --color-jh-yellow: #e5a657;
+  --color-jh-black: #1b2a38;
+
+  --animate-sparkle-fast: sparkle 1.5s ease-in-out infinite;
+  --animate-sparkle-med: sparkle 2s ease-in-out infinite;
+  --animate-sparkle-slow: sparkle 3s ease-in-out infinite;
+
+  @keyframes sparkle {
+    0% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.82);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  --animate-swing-fast: swing 4.5s ease-in-out infinite;
+  --animate-swing-med: swing 5s ease-in-out infinite;
+  --animate-swing-slow: swing 5.5s ease-in-out infinite;
+
+  @keyframes swing {
+    0% {
+      transform: rotate(var(--swing-from, -20deg));
+    }
+    50% {
+      transform: rotate(var(--swing-to, 5deg));
+    }
+    100% {
+      transform: rotate(var(--swing-from, -20deg));
+    }
+  }
+
+  --animate-light-flicker: light-flicker 7s steps(1) infinite;
+
+  @keyframes light-flicker {
+    0%,
+    10%  { opacity: 1; }
+    11.75%  { opacity: 0; }
+    13.5%  { opacity: 1; }
+    15.25%  { opacity: 0; }
+    17%  { opacity: 1; }
+    18.75%  { opacity: 0; }
+    20.5%  { opacity: 1; }
+    100% { opacity: 1; }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}

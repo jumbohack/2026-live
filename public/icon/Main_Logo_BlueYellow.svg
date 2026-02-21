@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 646.55 787.11">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #bbae00;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-3, .cls-6 {
+        stroke-width: 3px;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke: #e5a657;
+      }
+
+      .cls-2, .cls-5 {
+        stroke-width: 8px;
+      }
+
+      .cls-7 {
+        fill: #e5a657;
+      }
+
+      .cls-4 {
+        stroke-width: 5px;
+      }
+
+      .cls-4, .cls-5 {
+        stroke-linecap: round;
+      }
+
+      .cls-6 {
+        stroke: #092536;
+      }
+
+      .cls-8 {
+        fill: #092536;
+      }
+    </style>
+  </defs>
+  <g id="Final_Logos" data-name="Final Logos">
+    <g id="Main_Logo_BlueYellow" data-name="Main Logo BlueYellow">
+      <polygon class="cls-8" points="48.93 102.83 606.51 0 616.27 754.1 0 709.97 48.93 102.83"/>
+      <polyline class="cls-6" points="606.93 31.85 645.03 20.83 637.61 785.52 57.66 754.25 59.02 714.2"/>
+      <polyline class="cls-3" points="59.02 714.2 76.94 185.03 606.93 31.85"/>
+      <g id="JH_copy_7" data-name="JH copy 7">
+        <path id="body_right_gradient" data-name="body right gradient" class="cls-7" d="M474.05,381.43c33.56.13,54.62,28.69,53.9,53.81v196.92c-31.86,0-53.46-27.6-53.46-53.68,0,0-.44-172.28-.44-197.06Z"/>
+        <line id="body_right_gradient-2" data-name="body right gradient" class="cls-2" x1="400.78" y1="304.65" x2="400.78" y2="384.46"/>
+        <path id="body_right_gradient-3" data-name="body right gradient" class="cls-7" d="M311.86,227.78c-25.81,5.27-46.15,21.83-55.7,40.65v364.53c32.17,0,55.26-49.62,55.26-97.03,0,0,.21-201.63.21-201.72,0-39.39.24-61.65.24-106.43Z"/>
+        <line class="cls-2" x1="474.05" y1="385.43" x2="399.29" y2="385.43"/>
+        <polygon class="cls-7" points="466.41 567.93 458.38 547.94 458.38 381.43 466.41 381.43 466.41 567.93"/>
+        <polyline id="trunk_tip" data-name="trunk tip" class="cls-7" points="248.23 632.96 144.44 560.68 158.01 560.68 248.23 623.23"/>
+        <path class="cls-1" d="M288.57,234.08c10.27-4.95,21.78-7.72,33.94-7.72,43.24,0,78.29,35.05,78.29,78.29"/>
+        <path class="cls-2" d="M400.8,384.46c0,43.24-35.05,78.29-78.29,78.29"/>
+        <circle class="cls-7" cx="349.35" cy="385.43" r="7.33"/>
+        <path class="cls-2" d="M400.8,304.65c0-43.24-35.05-78.29-78.29-78.29s-78.29,35.05-78.29,78.29"/>
+        <line class="cls-2" x1="244.23" y1="304.29" x2="244.23" y2="627.33"/>
+        <line id="tusk" class="cls-5" x1="322.52" y1="462.75" x2="215.4" y2="462.75"/>
+      </g>
+      <g id="Sparkle_copy_7" data-name="Sparkle copy 7">
+        <line class="cls-4" x1="137.73" y1="200.03" x2="149" y2="314.31"/>
+        <line class="cls-4" x1="161.4" y1="232.76" x2="116.8" y2="276.99"/>
+        <line class="cls-4" x1="112.08" y1="229.05" x2="170.26" y2="273.13"/>
+      </g>
+    </g>
+  </g>
+</svg>
