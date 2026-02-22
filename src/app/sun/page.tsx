@@ -69,7 +69,7 @@ export default function SaturdaySchedule() {
         <div className="text-jh-blue-300 bg-jh-cream w-screen h-screen flex justify-center items-center">
             <main className="flex flex-col gap-10 items-center w-full max-w-250 h-full max-h-150">
                 <Image src={JumbohackLogo.src} alt="JumboHack" width={800} height={50}/>
-                <p className="text-5xl font-mono font-semibold pb-5">{currentTime.toLocaleTimeString()}</p>
+                <p className="text-5xl font-mono font-semibold pb-5">{currentTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}</p>
                 <div className="flex-1 w-full flex flex-col gap-5">
                 {
                     getCurrent(currentTime).map((e, i) => {
