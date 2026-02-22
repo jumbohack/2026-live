@@ -55,7 +55,7 @@ export default function SaturdaySchedule() {
     }, [events]);
 
     return (
-        <div className="bg-jh-blue-300 text-jh-cream w-screen h-screen flex justify-center items-center">
+        <div className="text-jh-blue-300 bg-jh-cream w-screen h-screen flex justify-center items-center">
             <main className="flex flex-col gap-10 items-center w-full max-w-250 h-full max-h-150">
                 <Image src={JumbohackLogo.src} alt="JumboHack" width={800} height={50}/>
                 <div className="flex-1 w-full flex flex-col gap-5">
@@ -63,7 +63,7 @@ export default function SaturdaySchedule() {
                     getCurrent(new Date()).map((e, i) => {
                         if (e.type === "critical") {
                             return (<div className="w-full" key={i}>
-                                <div key={i} className={`flex flex-col gap-3 bg-red-400 text-jh-black p-5 rounded-xl`}>
+                                <div key={i} className={`flex flex-col gap-3 bg-red-600 text-jh-black p-5 rounded-xl`}>
                                     <div className="flex flex-row justify-center items-center">
                                         <p className="text-3xl font-bold">{e.title}</p>
                                     </div>
@@ -88,8 +88,8 @@ export default function SaturdaySchedule() {
                     getNext(new Date()).map((e, i) => {
                         if (e.type === "critical") {
                             return (<div className="w-full" key={i}>
-                                <div className="flex flex-row justify-center items-center border-y border-red-400 p-2">
-                                    <p className="text-2xl text-red-400">{e.title}</p>
+                                <div className="flex flex-row justify-center items-center border-y-3 border-red-600 p-2">
+                                    <p className="text-2xl text-red-600 font-bold">{e.title}</p>
                                 </div>
                             </div>)
                         } else {
