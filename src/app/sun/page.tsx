@@ -32,7 +32,7 @@ export default function SaturdaySchedule() {
         }
     }, [eventsRaw]);
 
-    const getNextTwo = useCallback((now: Date) => {
+    const getNext = useCallback((now: Date) => {
         let es = []
         for (const e of events) {
             if (e.startTime.getTime() - now.getTime() > 0) {
@@ -60,29 +60,49 @@ export default function SaturdaySchedule() {
                 <Image src={JumbohackLogo.src} alt="JumboHack" width={800} height={50}/>
                 <div className="flex-1 w-full flex flex-col gap-5">
                 {
-                    getCurrent(new Date()).map((e, i) =>
-                        <div className="w-full" key={i}>
-                            <div key={i} className={`flex flex-col gap-3 bg-jh-yellow text-jh-black p-5 rounded-xl`}>
+                    getCurrent(new Date()).map((e, i) => {
+                        if (e.type === "critical") {
+                            return (<div className="w-full" key={i}>
+                                <div key={i} className={`flex flex-col gap-3 bg-red-400 text-jh-black p-5 rounded-xl`}>
+                                    <div className="flex flex-row justify-center items-center">
+                                        <p className="text-3xl font-bold">{e.title}</p>
+                                    </div>
+                                </div>
+                            </div>)
+                        } else {
+                            return (<div className="w-full" key={i}>
+                                <div key={i} className={`flex flex-col gap-3 bg-jh-yellow text-jh-black p-5 rounded-xl`}>
+                                    <div className="flex flex-row justify-between items-center">
+                                        <p className="text-3xl">{e.title}</p>
+                                        <p className="text-3xl">
+                                            {`${e.startTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })}-${e.endTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })}`}
+                                        </p>
+                                    </div>
+                                    <p className="text-xl">{e.location}</p>
+                                </div>
+                            </div>)
+                        }
+                    })
+                }
+                {
+                    getNext(new Date()).map((e, i) => {
+                        if (e.type === "critical") {
+                            return (<div className="w-full" key={i}>
+                                <div className="flex flex-row justify-center items-center border border-red-400 rounded-sm p-1">
+                                    <p className="text-2xl text-red-400">{e.title}</p>
+                                </div>
+                            </div>)
+                        } else {
+                            return (<div className="w-full" key={i}>
                                 <div className="flex flex-row justify-between items-center">
-                                    <p className="text-3xl">{e.title}</p>
-                                    <p className="text-3xl">
+                                    <p className="text-2xl">{e.title}</p>
+                                    <p className="text-2xl">
                                         {`${e.startTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })}-${e.endTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })}`}
                                     </p>
                                 </div>
-                                <p className="text-xl">{e.location}</p>
-                            </div>
-                        </div>)
-                }
-                {
-                    getNextTwo(new Date()).map((e, i) =>
-                        <div className="w-full" key={i}>
-                            <div className="flex flex-row justify-between items-center">
-                                <p className="text-2xl">{e.title}</p>
-                                <p className="text-2xl">
-                                    {`${e.startTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })}-${e.endTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })}`}
-                                </p>
-                            </div>
-                        </div>)
+                            </div>)
+                        }
+                    })
                 }
                 </div>
             </main>
