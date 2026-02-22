@@ -18,6 +18,7 @@ type Event = {
 export default function SaturdaySchedule() {
     const eventsRaw = useQuery(api.sunday.get);
     const [events, setEvents] = useState<Event[]>([]);
+    const [currentTime, setCurrentTime] = useState(new Date());
 
     useEffect(() => {
         const processedEvents = eventsRaw?.map(e => ({
@@ -31,6 +32,16 @@ export default function SaturdaySchedule() {
             setEvents(processedEvents);
         }
     }, [eventsRaw]);
+
+    const updateTime = useCallback(() => {
+        setCurrentTime(new Date());
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(updateTime, 1000);
+        updateTime();
+        return () => clearInterval(interval);
+    }, [updateTime]);
 
     const getNext = useCallback((now: Date) => {
         let es = []
@@ -58,9 +69,10 @@ export default function SaturdaySchedule() {
         <div className="text-jh-blue-300 bg-jh-cream w-screen h-screen flex justify-center items-center">
             <main className="flex flex-col gap-10 items-center w-full max-w-250 h-full max-h-150">
                 <Image src={JumbohackLogo.src} alt="JumboHack" width={800} height={50}/>
+                <p className="text-5xl font-mono font-semibold pb-5">{currentTime.toLocaleTimeString()}</p>
                 <div className="flex-1 w-full flex flex-col gap-5">
                 {
-                    getCurrent(new Date()).map((e, i) => {
+                    getCurrent(currentTime).map((e, i) => {
                         if (e.type === "critical") {
                             return (<div className="w-full" key={i}>
                                 <div key={i} className={`flex flex-col gap-3 bg-red-600 text-jh-black p-5 rounded-xl`}>
@@ -71,7 +83,7 @@ export default function SaturdaySchedule() {
                             </div>)
                         } else {
                             return (<div className="w-full" key={i}>
-                                <div key={i} className={`flex flex-col gap-3 bg-jh-yellow text-jh-black p-5 rounded-xl`}>
+                                <div key={i} className={`flex flex-col gap-3 bg-jh-blue-300 text-jh-cream p-5 rounded-xl`}>
                                     <div className="flex flex-row justify-between items-center">
                                         <p className="text-3xl">{e.title}</p>
                                         <p className="text-3xl">
@@ -85,7 +97,7 @@ export default function SaturdaySchedule() {
                     })
                 }
                 {
-                    getNext(new Date()).map((e, i) => {
+                    getNext(currentTime).map((e, i) => {
                         if (e.type === "critical") {
                             return (<div className="w-full" key={i}>
                                 <div className="flex flex-row justify-center items-center border-y-3 border-red-600 p-2">
