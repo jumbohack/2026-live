@@ -88,7 +88,7 @@ export default function SaturdaySchedule() {
                     getNext(new Date()).map((e, i) => {
                         if (e.type === "critical") {
                             return (<div className="w-full" key={i}>
-                                <div className="flex flex-row justify-center items-center border border-red-400 rounded-sm p-1">
+                                <div className="flex flex-row justify-center items-center border-y border-red-400 p-2">
                                     <p className="text-2xl text-red-400">{e.title}</p>
                                 </div>
                             </div>)
